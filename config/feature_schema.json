@@ -1,0 +1,11 @@
+{
+  "primary_value_prop": "string describing main value proposition",
+  "urgency_words": ["string"],
+  "social_proof": "boolean",
+  "emotional_tone": {
+    "label": "positive|neutral|negative",
+    "intensity": "float"
+  },
+  "reading_grade_level": "float",
+  "visual_badges": ["string"]
+}
