@@ -7,10 +7,10 @@ from analysis import influence_score
 from report import scorecard_generator, slack_notifier
 
 
-def main(keywords=None):
+def main(keywords=None, exclude_url=None):
     keywords = keywords or Path('config/keywords.txt').read_text().splitlines()
     for kw in keywords:
-        html, page = playwright_scraper.fetch_ad_html(kw)
+        html, page = playwright_scraper.fetch_ad_html(kw, exclude_url)
         gs_uri = screenshot_capture.capture_and_upload(page, kw)
         html_feats = parse_html.parse_ad(html)
         visual = vision_features.extract_visual_features(gs_uri)
